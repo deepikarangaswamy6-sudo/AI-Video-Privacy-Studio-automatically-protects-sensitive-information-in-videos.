@@ -73,8 +73,7 @@ if uploaded_file is not None:
         clip = ImageSequenceClip(processed_frames, fps=fps)
         output_path = os.path.join( "output", "privacy_safe_video.mp4" )
 
-        clip.write_videofile( output_path, codec="libx264", audio=False, verbose=False, logger=None )
-
+        clip.write_videofile( output_path, codec="libx264", audio=False )
         st.success(f"🎉 Processed {frame_count} frames successfully!")
 
         st.subheader("🔒 Privacy-Safe Video")
