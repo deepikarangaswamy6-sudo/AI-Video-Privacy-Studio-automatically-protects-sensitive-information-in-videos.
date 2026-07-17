@@ -43,7 +43,8 @@ if uploaded_file is not None:
         status = st.empty()
 
         # Load face detector
-        face_cascade = cv2.CascadeClassifier( cv2.data.haarcascades + "haarcascade_frontalface_default.xml" )
+        cascade_path = os.path.join( cv2.__path__[0], "data", "haarcascade_frontalface_default.xml" )
+face_cascade = cv2.CascadeClassifier(cascade_path)
 
         # Open video
         cap = cv2.VideoCapture(video_path)
