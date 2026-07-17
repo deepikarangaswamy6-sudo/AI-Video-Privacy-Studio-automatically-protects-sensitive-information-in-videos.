@@ -43,10 +43,15 @@ if uploaded_file is not None:
         status = st.empty()
 
         # Load face detector
-        cascade_path = os.path.join( cv2.__path__[0], "data", "haarcascade_frontalface_default.xml" )
-face_cascade = cv2.CascadeClassifier(cascade_path)
+       if st.button("🚀 Process Video"):
+    progress = st.progress(0)
+    status = st.empty()
 
-        # Open video
+    # Load face detector
+    cascade_path = os.path.join( cv2.__path__[0], "data", "haarcascade_frontalface_default.xml" )
+    face_cascade = cv2.CascadeClassifier(cascade_path)
+
+    # Open video
         cap = cv2.VideoCapture(video_path)
 
         total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
