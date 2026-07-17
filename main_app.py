@@ -2,7 +2,7 @@ import streamlit as st
 import cv2
 import os
 import numpy as np
-from moviepy.editor import ImageSequenceClip
+from moviepy import ImageSequenceClip
 
 # ----------------------------
 # Create required folders
